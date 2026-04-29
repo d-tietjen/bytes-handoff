@@ -1,0 +1,22 @@
+[package]
+name = "bytes-handoff"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Incremental async byte ingestion and bounded owned write handoff."
+license = "MIT"
+repository = "https://github.com/d-tietjen/bytes-handoff"
+readme = "README.md"
+keywords = ["async", "bytes", "tokio", "buffer", "handoff"]
+categories = ["asynchronous", "network-programming"]
+
+[dependencies]
+bytes = "1.11"
+thiserror = "1"
+tokio = { version = "1", features = ["io-util", "rt", "sync"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["io-util", "macros", "rt-multi-thread", "sync", "test-util"] }
+
+[lints.clippy]
+unwrap_used = "deny"
